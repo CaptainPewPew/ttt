@@ -2,14 +2,19 @@
 #include<stdlib.h>
 #include<ctype.h>
 #include<string.h>
+
 char check_board(char[10],char[10]);
 int print_board(char[10]);
 int check_tied(char[10]);
+
 // 0|1|2
 // - - -
 // 3|4|5
 // - - -
 // 6|7|8
+
+//TODO: Add timer of 2 second?
+//TODO: Add more stuff to do than TTT
 
 int main(void){
     char board[10] = "         ";
@@ -19,7 +24,7 @@ int main(void){
     int block;
     char gg[10];
     char *ptr;
-    
+
     //main game loop
     while (1){
 
@@ -51,10 +56,10 @@ int main(void){
                     }
                     break;
                 }
-                
+
         }
-        
-        
+
+
         //checks if win condition met or tie
         if (check_board(vis_board,board) == 1){
             if (x_turn){
@@ -71,7 +76,7 @@ int main(void){
             printf("\nGame tied\n");
             break;
         }
-        
+
         x_turn = !x_turn;
         o_turn = !o_turn;
 
@@ -82,6 +87,7 @@ int main(void){
 }
 
 int print_board(char board[10]){
+    printf("\n");
     for (int i = 0; i < strlen(board); ++i){
         printf("%c",board[i]);
         if (i != 2 && i != 5 && i != 8){
