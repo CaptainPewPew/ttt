@@ -82,6 +82,9 @@ int main(void){
 
 
     }
+    printf("Press Enter to Continue");
+    while (getchar()!='\n');
+    system("clear");
 
     return(0);
 }
@@ -103,6 +106,7 @@ int print_board(char board[10]){
 char check_board(char board[10],char board2[10]){
     //return 1 when win condition 0 otherwise 2 if game tied
     //horizontal
+    system("clear");
     if (board[0] == board[1] && board[0] == board[2]){
         return (1);
     } else if (board[3] == board[4] && board[3] == board[5]){
